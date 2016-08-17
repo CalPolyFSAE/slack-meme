@@ -40,15 +40,17 @@ class Memegen:
 
     def build_url(self, template, top, bottom, alt=None):
         extra = template == "extra"
-        extra_meme_url = None
+
+        print("Extra: " + str(extra) + "\n")
         
         if extra:
             template = "custom"
             
-            for meme in extra_memes:
+            for meme in self.extra_memes:
                 if meme["name"] == alt:
                     alt = meme["url"]
                     break
+        print("Alt: " + alt + "\n")
 
         path = "/{0}/{1}/{2}.jpg".format(template, top or '_', bottom or '_')
 
