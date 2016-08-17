@@ -36,7 +36,7 @@ def meme():
 
     valid_templates = [x[0] for x in memegen.get_templates()]
 
-    if template in [x[0] for x in memegen.extra_memes]:
+    if template in [x["name"] for x in memegen.extra_memes]:
         meme_url = memegen.build_url("extra", top, bottom, template)
     elif template in valid_templates:
         meme_url = memegen.build_url(template, top, bottom)
