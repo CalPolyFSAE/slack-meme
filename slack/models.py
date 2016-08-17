@@ -39,6 +39,17 @@ class Memegen:
         return help
 
     def build_url(self, template, top, bottom, alt=None):
+        extra = template == "extra"
+        extra_meme_url = None
+        
+        if extra:
+            template = "custom"
+            
+            for meme in extra_memes:
+                if meme["name"] == alt:
+                    alt = meme["url"]
+                    break
+
         path = "/{0}/{1}/{2}.jpg".format(template, top or '_', bottom or '_')
 
         if alt:
