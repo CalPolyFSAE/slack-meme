@@ -23,7 +23,7 @@ class Memegen:
             data.append((name, description))
             
         for extra_meme in self.extra_memes:
-        	data.append((self.extra_meme["name"], self.extra_meme["description"]))
+        	data.append((extra_meme["name"], extra_meme["description"]))
 
         data.sort(key=lambda tup: tup[0])
         return data
