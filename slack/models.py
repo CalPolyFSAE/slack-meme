@@ -5,9 +5,9 @@ import requests
 
 
 class Memegen:
-	extra_memes = [
-		{"name": "fuck-it", "description": "Who Else?", "url": "https://github.com/CalPolyFSAE/slack-meme/raw/master/images/fuck-it.jpg"},
-	]
+    extra_memes = [
+        {"name": "fuck-it", "description": "Who Else?", "url": "https://github.com/CalPolyFSAE/slack-meme/raw/master/images/fuck-it.jpg"},
+    ]
 
     def __init__(self):
         self.BASE_URL = "http://memegen.link"
@@ -23,7 +23,7 @@ class Memegen:
             data.append((name, description))
             
         for extra_meme in self.extra_memes:
-        	data.append((extra_meme["name"], extra_meme["description"]))
+            data.append((extra_meme["name"], extra_meme["description"]))
 
         data.sort(key=lambda tup: tup[0])
         return data
