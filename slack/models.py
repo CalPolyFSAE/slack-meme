@@ -42,7 +42,6 @@ class Memegen:
         extra = template == "extra"
 
         print("Extra: " + str(extra) + "\n")
-        sys.stdout.flush()
         
         if extra:
             template = "custom"
@@ -52,7 +51,6 @@ class Memegen:
                     alt = meme["url"]
                     break
         print("Alt: " + alt + "\n")
-        sys.stdout.flush()
 
         path = "/{0}/{1}/{2}.jpg".format(template, top or '_', bottom or '_')
 
